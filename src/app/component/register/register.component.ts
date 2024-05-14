@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -23,7 +24,7 @@ export class RegisterComponent {
     message: string = '';
     otpSent:boolean = false;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router, private snack: MatSnackBar) {}
 
   ngOnInit(): void {
     this.otp = this.generateOTP();
@@ -48,12 +49,18 @@ export class RegisterComponent {
           this.message = response;
           console.log(this.message)
           console.log(this.otp," otp when sent")
-          alert("Otp Sent to your email")
+          this.snack.open("Check your mail for otp",'ok',{
+            verticalPosition:'top'
+          });
           this.otpSent=true;
         },
         error => {
           console.log(email," ",this.otp)
           console.error('Error verifying OTP:', error);
+          this.snack.open("Error registering user",'ok',{
+            verticalPosition:'top'
+          });
+
           this.message = 'Failed to verify OTP. Please try again later.';
         }
       );
@@ -67,7 +74,9 @@ export class RegisterComponent {
       this.registerUser();
     }
     else{
-      alert("Wrong OTP")
+      this.snack.open("Wrong otp entered",'ok',{
+        verticalPosition:'top'
+      });
     }
   }
 
@@ -75,13 +84,19 @@ export class RegisterComponent {
     this.userService.registerUser(this.user).subscribe(
       response => {
         console.log('User registered successfully:', response);
-        alert("Registration Successfull")
+        this.snack.open('Registration successfull','ok',{
+          verticalPosition:'top'
+        });
         this.router.navigate(['login'])
 
         // Add any additional handling or redirection logic here
       },
       error => {
         console.error('Error registering user:', error);
+        this.snack.open("Error registering user",'ok',{
+          verticalPosition:'top'
+        });
+
         // Handle error, display message, etc.
       }
     );

@@ -10,7 +10,7 @@ export class StartingPageComponent {
   constructor(private router:Router){}
 
   openHome(){
-    this.router.navigate(['register'])
+    this.router.navigate(['login'])
   }
 
 }
