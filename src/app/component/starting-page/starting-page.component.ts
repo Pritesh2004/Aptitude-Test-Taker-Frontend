@@ -7,10 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./starting-page.component.css']
 })
 export class StartingPageComponent {
-  constructor(private router:Router){}
-
-  openHome(){
-    this.router.navigate(['login'])
-  }
+  
+  
 
 }

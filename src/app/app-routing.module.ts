@@ -5,6 +5,8 @@ import { UserHomeComponent } from './component/user/user-home/user-home.componen
 import { AdminHomeComponent } from './component/admin/admin-home/admin-home.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { AdminGuard } from './services/authGuards/admin.guard';
+import { NormalUserGuard } from './services/authGuards/normal-user.guard';
 
 const routes: Routes = [
 
@@ -17,13 +19,16 @@ const routes: Routes = [
 {
   path:'userHome',
   component:UserHomeComponent,
-  pathMatch:"full"
+  pathMatch:"full",
+  canActivate:[NormalUserGuard]
+
 },
 
 {
   path:'adminHome',
   component:AdminHomeComponent,
-  pathMatch:"full"
+  pathMatch:"full",
+  canActivate:[AdminGuard]
 },
 
 {

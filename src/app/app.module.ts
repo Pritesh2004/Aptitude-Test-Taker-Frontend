@@ -16,6 +16,7 @@ import { UserHomeComponent } from './component/user/user-home/user-home.componen
 import { AdminHomeComponent } from './component/admin/admin-home/admin-home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { authInterceptorProviders } from './services/auth.interceptor';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { authInterceptorProviders } from './services/auth.interceptor';
     LoginComponent,
     RegisterComponent,
     UserHomeComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    NavbarComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -15,7 +16,7 @@ export class LoginComponent {
     password: ''
   };
 
-  constructor(private loginService: LoginService, private router:Router){}
+  constructor(private loginService: LoginService, private router:Router, private snack: MatSnackBar){}
 
   loginUser(){
     this.loginService.generateToken(this.userRequest).subscribe(
@@ -30,13 +31,25 @@ export class LoginComponent {
           userData=>{
             console.log("User ->",userData);
             this.loginService.setUser(userData);
-            this.router.navigate(['userHome']);
+
+            if(this.loginService.getUserRole() == "ADMIN"){
+              this.router.navigate(['adminHome']);
+            }
+            else if(this.loginService.getUserRole() == "NORMAL"){
+              this.router.navigate(['userHome']);
+            }
+            else{
+              this.loginService.logout();
+            }
           }
+
         );
       },
       error =>{
         console.log("Error while generating token", error);
-      }
+        this.snack.open("Invalid Credentials",'ok',{
+          verticalPosition:'top'
+        });      }
 
     );
    
