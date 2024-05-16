@@ -17,6 +17,7 @@ import { AdminHomeComponent } from './component/admin/admin-home/admin-home.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { CreateQuizComponent } from './component/admin/create-quiz/create-quiz.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     RegisterComponent,
     UserHomeComponent,
     AdminHomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateQuizComponent
   ],
   imports: [
     HttpClientModule,

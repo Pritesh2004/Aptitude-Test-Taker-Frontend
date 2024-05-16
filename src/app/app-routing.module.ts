@@ -7,6 +7,7 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { AdminGuard } from './services/authGuards/admin.guard';
 import { NormalUserGuard } from './services/authGuards/normal-user.guard';
+import { CreateQuizComponent } from './component/admin/create-quiz/create-quiz.component';
 
 const routes: Routes = [
 
@@ -27,8 +28,13 @@ const routes: Routes = [
 {
   path:'adminHome',
   component:AdminHomeComponent,
-  pathMatch:"full",
-  canActivate:[AdminGuard]
+  canActivate:[AdminGuard],
+  children:[
+    {
+      path:'createQuiz',
+      component: CreateQuizComponent,
+    }
+  ]
 },
 
 {

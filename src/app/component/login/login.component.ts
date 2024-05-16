@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
@@ -8,7 +8,7 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent{
 
 
   userRequest = {
@@ -16,8 +16,11 @@ export class LoginComponent {
     password: ''
   };
 
+  
+
   constructor(private loginService: LoginService, private router:Router, private snack: MatSnackBar){}
 
+ 
   loginUser(){
     this.loginService.generateToken(this.userRequest).subscribe(
 
@@ -33,10 +36,14 @@ export class LoginComponent {
             this.loginService.setUser(userData);
 
             if(this.loginService.getUserRole() == "ADMIN"){
+              this.loginService.loginStatusSubject.next(true);
               this.router.navigate(['adminHome']);
+
             }
             else if(this.loginService.getUserRole() == "NORMAL"){
+              this.loginService.loginStatusSubject.next(true);
               this.router.navigate(['userHome']);
+
             }
             else{
               this.loginService.logout();
