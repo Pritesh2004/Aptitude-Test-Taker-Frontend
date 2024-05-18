@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list'; // Import MatListModule
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+import { MatCardModule } from '@angular/material/card';  // Import MatCardModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { CreateQuizComponent } from './component/admin/create-quiz/create-quiz.component';
+import { CategoriesComponent } from './component/admin/categories/categories.component';
+import { QuizzesComponent } from './component/admin/quizzes/quizzes.component';
+import { AddCategoriesComponent } from './component/admin/add-categories/add-categories.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,17 @@ import { CreateQuizComponent } from './component/admin/create-quiz/create-quiz.c
     UserHomeComponent,
     AdminHomeComponent,
     NavbarComponent,
-    CreateQuizComponent
+    CreateQuizComponent,
+    CategoriesComponent,
+    QuizzesComponent,
+    AddCategoriesComponent
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     MatListModule,
     MatSnackBarModule,
+    MatCardModule,
     MatTableModule,
     BrowserModule,
     BrowserModule,

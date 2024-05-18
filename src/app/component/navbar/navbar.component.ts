@@ -12,30 +12,27 @@ export class NavbarComponent implements OnInit {
   isLoggedIn = false;
   user = null;
   isRoleAdmin = false;
-  isRoleNormal = false;
 
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+
     this.isLoggedIn = this.loginService.isLoggenIn();
     this.user = this.loginService.getUser();
+
     if (this.loginService.getUserRole() == "ADMIN") {
       this.isRoleAdmin = true;
     }
-    if (this.loginService.getUserRole() == "NORMAL") {
-      this.isRoleNormal = true;
-    }
+    
 
     //subject
-    this.loginService.loginStatusSubject.asObservable().subscribe((data) => {
+    this.loginService.loginStatusSubject.asObservable().subscribe(data => {
       this.isLoggedIn = this.loginService.isLoggenIn();
       this.user = this.loginService.getUser();
       if (this.loginService.getUserRole() == "ADMIN") {
         this.isRoleAdmin = true;
       }
-      if (this.loginService.getUserRole() == "NORMAL") {
-        this.isRoleNormal = true;
-      }
+      
       console.log("IsRoleAdmin: " + this.isRoleAdmin);
 
     });
@@ -47,8 +44,10 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.loginService.logout();
-    this.isLoggedIn = false;
-    this.isRoleAdmin = false;
+    // this.isLoggedIn = false;
+    // this.isRoleAdmin = false;
+    // this.isRoleNormal = false;
+    this.loginService.loginStatusSubject.next(false);
     window.location.reload();
   }
 }

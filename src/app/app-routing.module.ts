@@ -8,6 +8,9 @@ import { RegisterComponent } from './component/register/register.component';
 import { AdminGuard } from './services/authGuards/admin.guard';
 import { NormalUserGuard } from './services/authGuards/normal-user.guard';
 import { CreateQuizComponent } from './component/admin/create-quiz/create-quiz.component';
+import { AddCategoriesComponent } from './component/admin/add-categories/add-categories.component';
+import { CategoriesComponent } from './component/admin/categories/categories.component';
+import { QuizzesComponent } from './component/admin/quizzes/quizzes.component';
 
 const routes: Routes = [
 
@@ -33,7 +36,20 @@ const routes: Routes = [
     {
       path:'createQuiz',
       component: CreateQuizComponent,
-    }
+    },
+    {
+      path:'addCategories',
+      component: AddCategoriesComponent,
+    },
+    {
+      path:'categories',
+      component: CategoriesComponent,
+    },
+    {
+      path:'quizzes',
+      component: QuizzesComponent,
+    },
+    
   ]
 },
 
