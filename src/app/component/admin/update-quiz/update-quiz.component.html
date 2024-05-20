@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form #quizForm="ngForm" (ngSubmit)="createQuiz()">
+    <form #quizForm="ngForm" (ngSubmit)="updateQuiz()">
       <div class="form-group">
         <label for="title">Title</label>
         <input
@@ -55,17 +55,12 @@
           [(ngModel)]="quiz.category.cid"
           required
         >
-          <option *ngFor="let category of categories" [value]="category.cid">
-            {{ category.title }}
+          <option  [value]="quiz.category.cid">
+            {{ quiz.category.title }}
           </option>
         </select>
       </div>
   
-      <button type="submit">Create Quiz</button>
+      <button type="submit">Update Quiz</button>
     </form>
   </div>
-  
-  
-  <!-- This is for debugging purposes to see the bound data
-  <pre>{{ quiz | json }}</pre> -->
-  

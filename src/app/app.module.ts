@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list'; // Import MatListModule
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-import { MatCardModule } from '@angular/material/card';  // Import MatCardModule
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +22,8 @@ import { CreateQuizComponent } from './component/admin/create-quiz/create-quiz.c
 import { CategoriesComponent } from './component/admin/categories/categories.component';
 import { QuizzesComponent } from './component/admin/quizzes/quizzes.component';
 import { AddCategoriesComponent } from './component/admin/add-categories/add-categories.component';
+import { UpdateQuizComponent } from './component/admin/update-quiz/update-quiz.component';
+import { QuestionsComponent } from './component/admin/questions/questions.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +37,16 @@ import { AddCategoriesComponent } from './component/admin/add-categories/add-cat
     CreateQuizComponent,
     CategoriesComponent,
     QuizzesComponent,
-    AddCategoriesComponent
+    AddCategoriesComponent,
+    UpdateQuizComponent,
+    QuestionsComponent
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     MatListModule,
     MatSnackBarModule,
+    MatButtonModule,
     MatCardModule,
     MatTableModule,
     BrowserModule,

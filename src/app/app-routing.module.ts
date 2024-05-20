@@ -11,6 +11,8 @@ import { CreateQuizComponent } from './component/admin/create-quiz/create-quiz.c
 import { AddCategoriesComponent } from './component/admin/add-categories/add-categories.component';
 import { CategoriesComponent } from './component/admin/categories/categories.component';
 import { QuizzesComponent } from './component/admin/quizzes/quizzes.component';
+import { UpdateQuizComponent } from './component/admin/update-quiz/update-quiz.component';
+import { QuestionsComponent } from './component/admin/questions/questions.component';
 
 const routes: Routes = [
 
@@ -49,6 +51,14 @@ const routes: Routes = [
       path:'quizzes',
       component: QuizzesComponent,
     },
+    {
+      path:'quiz/:qId',
+      component:UpdateQuizComponent
+    },
+    {
+      path:'questions/:qId',
+      component:QuestionsComponent
+    } 
     
   ]
 },
