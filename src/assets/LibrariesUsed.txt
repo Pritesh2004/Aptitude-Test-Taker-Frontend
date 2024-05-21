@@ -1,0 +1,3 @@
+Angular rich text editor component -> npm install --save @ckeditor/ckeditor5-angular
+                                      npm install --save @ckeditor/ckeditor5-build-classic
+Angular Material -> 

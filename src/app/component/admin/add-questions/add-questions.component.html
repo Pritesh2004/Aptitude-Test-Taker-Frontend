@@ -1,0 +1,44 @@
+<h1>Add Question to {{title}}</h1>
+
+<form #questionForm="ngForm" (ngSubmit)="addQuestion(questionForm)" class="question-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Content</mat-label>
+      <textarea matInput name="content" [(ngModel)]="question.content" required></textarea>
+    </mat-form-field>
+
+    <!-- <ckeditor [editor]="Editor"  name="content" [(ngModel)]="question.content">
+    </ckeditor> -->
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Option 1</mat-label>
+        <input matInput name="option1" [(ngModel)]="question.option1" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Option 2</mat-label>
+        <input matInput name="option2" [(ngModel)]="question.option2" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Option 3</mat-label>
+        <input matInput name="option3" [(ngModel)]="question.option3" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Option 4</mat-label>
+        <input matInput name="option4" [(ngModel)]="question.option4" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Answer</mat-label>
+        <mat-select name="answer" [(ngModel)]="question.answer" required>
+            <mat-option *ngFor="let option of [question.option1, question.option2, question.option3, question.option4]"
+                [value]="option">
+                {{ option }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Add Question</button>
+</form>

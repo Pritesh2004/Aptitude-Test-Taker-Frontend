@@ -7,6 +7,10 @@ import { MatListModule } from '@angular/material/list'; // Import MatListModule
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select'; // Import MatSelectModule
+import { MatOptionModule } from '@angular/material/core'; // Import MatOptionModule
+import { MatInputModule } from '@angular/material/input';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +28,8 @@ import { QuizzesComponent } from './component/admin/quizzes/quizzes.component';
 import { AddCategoriesComponent } from './component/admin/add-categories/add-categories.component';
 import { UpdateQuizComponent } from './component/admin/update-quiz/update-quiz.component';
 import { QuestionsComponent } from './component/admin/questions/questions.component';
+import { AddQuestionsComponent } from './component/admin/add-questions/add-questions.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -39,19 +45,25 @@ import { QuestionsComponent } from './component/admin/questions/questions.compon
     QuizzesComponent,
     AddCategoriesComponent,
     UpdateQuizComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    AddQuestionsComponent
   ],
   imports: [
+    MatSelectModule,
     HttpClientModule,
     FormsModule,
-    MatListModule,
+    MatInputModule,
+    CKEditorModule,
     MatSnackBarModule,
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    MatListModule,
     BrowserModule,
     BrowserModule,
     AppRoutingModule,
+    MatOptionModule,
+    MatFormFieldModule,
     BrowserAnimationsModule
   ],
   providers: [authInterceptorProviders],
