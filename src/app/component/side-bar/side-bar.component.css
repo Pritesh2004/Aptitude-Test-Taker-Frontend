@@ -1,0 +1,92 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidenav mat-toolbar {
+    background-color: #3f51b5;
+    color: #ffffff;
+  }
+  
+  mat-toolbar {
+    background-color: #3f51b5;
+    color: #ffffff;
+  }
+  
+  .mat-icon-button {
+    color: #ffffff;
+  }
+  
+  .main-content {
+  }
+  
+  a.mat-list-item {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  a.mat-list-item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  #nav-title{
+    cursor: pointer;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3f51b5;
+    color: white;
+    padding: 0 1rem;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+  }
+  
+  .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .navlinks {
+    position: absolute;
+    right: 1px;
+    display: flex;
+    justify-content:flex-end;
+    place-items: center;
+    padding-right: 20px;
+    width: 20%;
+  }
+  
+
+  
+  
+
+
+.contact-btn {
+  width: 135px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-right: 10px;
+  
+}
+
+#joinBtn {
+    width: 135px;
+    height: 45px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+

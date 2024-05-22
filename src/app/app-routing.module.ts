@@ -14,20 +14,37 @@ import { QuizzesComponent } from './component/admin/quizzes/quizzes.component';
 import { UpdateQuizComponent } from './component/admin/update-quiz/update-quiz.component';
 import { QuestionsComponent } from './component/admin/questions/questions.component';
 import { AddQuestionsComponent } from './component/admin/add-questions/add-questions.component';
+import { UserProfileComponent } from './component/user/user-profile/user-profile.component';
+import { AdminProfileComponent } from './component/admin/admin-profile/admin-profile.component';
 
 const routes: Routes = [
 
 {
   path:'',
   component:StartingPageComponent,
-  pathMatch:"full"
+  children:[
+    {
+      path:'login',
+      component:LoginComponent,
+    },
+    
+    {
+      path:'register',
+      component:RegisterComponent,
+    }
+  ]
 },
 
 {
   path:'userHome',
   component:UserHomeComponent,
-  pathMatch:"full",
-  canActivate:[NormalUserGuard]
+  canActivate:[NormalUserGuard],
+  children:[
+    {
+      path:'user-profile',
+      component:UserProfileComponent
+    }
+  ]
 
 },
 
@@ -36,6 +53,10 @@ const routes: Routes = [
   component:AdminHomeComponent,
   canActivate:[AdminGuard],
   children:[
+    {
+      path:'admin-profile',
+      component:AdminProfileComponent
+    },
     {
       path:'createQuiz',
       component: CreateQuizComponent,
@@ -67,19 +88,6 @@ const routes: Routes = [
     
   ]
 },
-
-{
-  path:'login',
-  component:LoginComponent,
-  pathMatch:"full"
-},
-
-{
-  path:'register',
-  component:RegisterComponent,
-  pathMatch:"full"
-}
-
 
 ];
 

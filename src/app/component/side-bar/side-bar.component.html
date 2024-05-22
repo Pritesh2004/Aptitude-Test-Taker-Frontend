@@ -1,0 +1,59 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" mode="side">
+        <mat-toolbar>Quiz Navigation</mat-toolbar>
+        <mat-nav-list>
+            <a *ngIf="!isRoleAdmin" mat-list-item routerLink="/userHome/user-profile">
+                <mat-icon>account_circle</mat-icon>
+                Profile
+            </a>
+            <a *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/admin-profile">
+                <mat-icon>account_circle</mat-icon>
+                Profile
+            </a>
+            <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/categories">
+                <mat-icon>quiz</mat-icon>
+                View Categories
+            </a>
+
+            <a *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/addCategories">
+                <mat-icon>quiz</mat-icon>
+                Add Categories
+            </a>
+            <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/quizzes">
+                <mat-icon>quiz</mat-icon>
+                View Quizzes
+            </a>
+            <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/createQuiz">
+                <mat-icon>quiz</mat-icon>
+                Add Quizzed
+            </a>
+            <a mat-list-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                Logout
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            
+            <button mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span id="nav-title" routerLink="/">AptitudeAce </span>
+            <div class="navlinks">
+                <button  mat-stroked-button color="basic" *ngIf="!isRoleAdmin" class="contact-btn" routerLink="/contact">CONTACT</button>
+                <button mat-raised-button color="warn" *ngIf="!isLoggedIn"  (click)="openHome()">
+                    JOIN NOW
+                </button>
+                <button mat-raised-button color="warn" *ngIf="isLoggedIn" id="joinBtn" (click)="logout()">
+                    LOGOUT
+                </button>
+            </div>
+            
+        </mat-toolbar>
+
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

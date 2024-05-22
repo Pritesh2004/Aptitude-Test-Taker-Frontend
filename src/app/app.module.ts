@@ -11,7 +11,10 @@ import { MatSelectModule } from '@angular/material/select'; // Import MatSelectM
 import { MatOptionModule } from '@angular/material/core'; // Import MatOptionModule
 import { MatInputModule } from '@angular/material/input';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartingPageComponent } from './component/starting-page/starting-page.component';
@@ -30,6 +33,9 @@ import { UpdateQuizComponent } from './component/admin/update-quiz/update-quiz.c
 import { QuestionsComponent } from './component/admin/questions/questions.component';
 import { AddQuestionsComponent } from './component/admin/add-questions/add-questions.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SideBarComponent } from './component/side-bar/side-bar.component';
+import { UserProfileComponent } from './component/user/user-profile/user-profile.component';
+import { AdminProfileComponent } from './component/admin/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -46,15 +52,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AddCategoriesComponent,
     UpdateQuizComponent,
     QuestionsComponent,
-    AddQuestionsComponent
+    AddQuestionsComponent,
+    SideBarComponent,
+    UserProfileComponent,
+    AdminProfileComponent
   ],
   imports: [
     MatSelectModule,
+    MatSidenavModule,
     HttpClientModule,
+    MatIconModule,
     FormsModule,
     MatInputModule,
     CKEditorModule,
     MatSnackBarModule,
+    MatToolbarModule,
     MatButtonModule,
     MatCardModule,
     MatTableModule,
