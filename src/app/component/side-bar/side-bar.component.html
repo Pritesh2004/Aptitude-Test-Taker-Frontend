@@ -2,14 +2,28 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport="true" mode="side">
         <mat-toolbar>Quiz Navigation</mat-toolbar>
         <mat-nav-list>
-            <a *ngIf="!isRoleAdmin" mat-list-item routerLink="/userHome/user-profile">
-                <mat-icon>account_circle</mat-icon>
-                Profile
-            </a>
+           
             <a *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/admin-profile">
                 <mat-icon>account_circle</mat-icon>
                 Profile
             </a>
+           
+            <a *ngIf="!isRoleAdmin" mat-list-item routerLink="/userHome/user-profile">
+                <mat-icon>account_circle</mat-icon>
+                Profile
+            </a>
+            <a *ngIf="!isRoleAdmin && user" mat-list-item routerLink="/userHome/all-quizzes">
+                <mat-icon>quiz</mat-icon>
+                All Quizzes
+            </a>
+
+            <div *ngIf="!isRoleAdmin">
+                <a *ngFor="let c of categories" mat-list-item [routerLink]="'/userHome/quiz/'+c.cid">
+                    <mat-icon>quiz</mat-icon>
+                    {{c.title}}
+                </a>
+            </div>
+            
             <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/categories">
                 <mat-icon>quiz</mat-icon>
                 View Categories

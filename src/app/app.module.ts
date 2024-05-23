@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +37,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SideBarComponent } from './component/side-bar/side-bar.component';
 import { UserProfileComponent } from './component/user/user-profile/user-profile.component';
 import { AdminProfileComponent } from './component/admin/admin-profile/admin-profile.component';
+import { AllQuizzesComponent } from './component/user/all-quizzes/all-quizzes.component';
+import { QuizOfCategoryComponent } from './component/user/quiz-of-category/quiz-of-category.component';
+import { QuizInstructionsComponent } from './component/user/quiz-instructions/quiz-instructions.component';
+import { StartQuizComponent } from './component/user/start-quiz/start-quiz.component';
+import { CanDeactivateGuard } from './services/authGuards/can-deactivate-guard.service';
+import { QuizSummaryComponent } from './component/user/quiz-summary/quiz-summary.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +62,12 @@ import { AdminProfileComponent } from './component/admin/admin-profile/admin-pro
     AddQuestionsComponent,
     SideBarComponent,
     UserProfileComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    AllQuizzesComponent,
+    QuizOfCategoryComponent,
+    QuizInstructionsComponent,
+    StartQuizComponent,
+    QuizSummaryComponent
   ],
   imports: [
     MatSelectModule,
@@ -65,6 +77,7 @@ import { AdminProfileComponent } from './component/admin/admin-profile/admin-pro
     FormsModule,
     MatInputModule,
     CKEditorModule,
+    MatRadioModule,
     MatSnackBarModule,
     MatToolbarModule,
     MatButtonModule,
@@ -78,7 +91,7 @@ import { AdminProfileComponent } from './component/admin/admin-profile/admin-pro
     MatFormFieldModule,
     BrowserAnimationsModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders,CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

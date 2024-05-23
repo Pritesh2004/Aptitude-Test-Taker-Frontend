@@ -16,23 +16,28 @@ import { QuestionsComponent } from './component/admin/questions/questions.compon
 import { AddQuestionsComponent } from './component/admin/add-questions/add-questions.component';
 import { UserProfileComponent } from './component/user/user-profile/user-profile.component';
 import { AdminProfileComponent } from './component/admin/admin-profile/admin-profile.component';
+import { AllQuizzesComponent } from './component/user/all-quizzes/all-quizzes.component';
+import { QuizOfCategoryComponent } from './component/user/quiz-of-category/quiz-of-category.component';
+import { QuizInstructionsComponent } from './component/user/quiz-instructions/quiz-instructions.component';
+import { StartQuizComponent } from './component/user/start-quiz/start-quiz.component';
+import { CanDeactivateGuard } from './services/authGuards/can-deactivate-guard.service';
 
 const routes: Routes = [
 
 {
   path:'',
   component:StartingPageComponent,
-  children:[
-    {
-      path:'login',
-      component:LoginComponent,
-    },
-    
-    {
-      path:'register',
-      component:RegisterComponent,
-    }
-  ]
+ 
+},
+
+{
+  path:'login',
+  component:LoginComponent,
+},
+
+{
+  path:'register',
+  component:RegisterComponent,
 },
 
 {
@@ -43,8 +48,29 @@ const routes: Routes = [
     {
       path:'user-profile',
       component:UserProfileComponent
+    },
+    {
+      path:'all-quizzes',
+      component:AllQuizzesComponent
+    },{
+      path:'quiz/:cid',
+      component:QuizOfCategoryComponent
     }
+    ,{
+      path:'instructions/:qId',
+      component:QuizInstructionsComponent
+    }
+    
   ]
+  
+
+},
+
+{
+  path:'start-quiz/:qId',
+  component:StartQuizComponent,
+  canActivate:[NormalUserGuard],
+  canDeactivate:[CanDeactivateGuard]
 
 },
 

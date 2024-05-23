@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/services/category.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class SideBarComponent {
   user = null;
   isRoleAdmin = false;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  categories:any=[];
+
+
+
+  constructor(private loginService: LoginService, private router: Router, private categoryService: CategoryService) {}
 
   ngOnInit(): void {
     this.isLoggedIn = this.loginService.isLoggenIn();
@@ -21,6 +26,8 @@ export class SideBarComponent {
     if (this.loginService.getUserRole() === "ADMIN") {
       this.isRoleAdmin = true;
     }
+
+
 
     this.loginService.loginStatusSubject.asObservable().subscribe(data => {
       this.isLoggedIn = this.loginService.isLoggenIn();
@@ -31,6 +38,17 @@ export class SideBarComponent {
         this.isRoleAdmin = false;
       }
     });
+
+    if(this.user!=null){
+      this.categoryService.getCategories().subscribe(data=>{
+        this.categories = data;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
+    }
+    
   }
 
   openHome() {

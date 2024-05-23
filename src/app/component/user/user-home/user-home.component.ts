@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-user-home',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-home.component.css']
 })
 export class UserHomeComponent {
-
+ 
 }

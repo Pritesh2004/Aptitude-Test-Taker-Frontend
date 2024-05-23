@@ -1,0 +1,12 @@
+<mat-card *ngFor="let question of questions; let i = index">
+    <mat-card-header>
+      <mat-card-title>Question {{ i + 1 }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ question.question }}</p>
+      <p><strong>Correct Answer:</strong> {{ question.answer }}</p>
+      <p><strong>Your Answer:</strong> {{ selectedOptions[i] }}</p>
+      <p><strong>Result:</strong> {{ correctAnswers[i] ? 'Correct' : 'Wrong' }}</p>
+    </mat-card-content>
+  </mat-card>
+  

@@ -14,6 +14,10 @@ export class QuizService {
     return this.http.get(`${this.baseUrl}/quiz/`);
   }
 
+  public getQuizzesOfCategory(cid:any) {
+    return this.http.get(`${this.baseUrl}/quiz/category/${cid}`);
+  }
+
   public addQuiz(quiz:any){
     return this.http.post(`${this.baseUrl}/quiz/`,quiz)
   }
