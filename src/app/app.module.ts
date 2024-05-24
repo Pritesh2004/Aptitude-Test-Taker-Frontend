@@ -14,6 +14,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -43,6 +44,8 @@ import { QuizInstructionsComponent } from './component/user/quiz-instructions/qu
 import { StartQuizComponent } from './component/user/start-quiz/start-quiz.component';
 import { CanDeactivateGuard } from './services/authGuards/can-deactivate-guard.service';
 import { QuizSummaryComponent } from './component/user/quiz-summary/quiz-summary.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+
 
 @NgModule({
   declarations: [
@@ -70,10 +73,13 @@ import { QuizSummaryComponent } from './component/user/quiz-summary/quiz-summary
     QuizSummaryComponent
   ],
   imports: [
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule,
     MatSelectModule,
     MatSidenavModule,
     HttpClientModule,
     MatIconModule,
+    MatProgressSpinnerModule,
     FormsModule,
     MatInputModule,
     CKEditorModule,

@@ -41,7 +41,7 @@
                 <mat-icon>quiz</mat-icon>
                 Add Quizzed
             </a>
-            <a mat-list-item (click)="logout()">
+            <a *ngIf="isLoggedIn" mat-list-item (click)="logout()">
                 <mat-icon>logout</mat-icon>
                 Logout
             </a>

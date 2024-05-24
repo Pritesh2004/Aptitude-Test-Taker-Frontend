@@ -22,13 +22,11 @@ export class SideBarComponent {
   ngOnInit(): void {
     this.isLoggedIn = this.loginService.isLoggenIn();
     this.user = this.loginService.getUser();
-
+  
     if (this.loginService.getUserRole() === "ADMIN") {
       this.isRoleAdmin = true;
     }
-
-
-
+  
     this.loginService.loginStatusSubject.asObservable().subscribe(data => {
       this.isLoggedIn = this.loginService.isLoggenIn();
       this.user = this.loginService.getUser();
@@ -37,19 +35,30 @@ export class SideBarComponent {
       } else {
         this.isRoleAdmin = false;
       }
+  
+      // Fetch categories if user is logged in
+      if (this.isLoggedIn) {
+        this.loadCategories();
+      }
     });
-
-    if(this.user!=null){
-      this.categoryService.getCategories().subscribe(data=>{
+  
+    // Fetch categories if user is logged in
+    if(this.user != null && this.isLoggedIn) {
+      this.loadCategories();
+    }
+  }
+  
+  loadCategories() {
+    this.categoryService.getCategories().subscribe(
+      data => {
         this.categories = data;
       },
-      (error)=>{
+      error => {
         console.log(error);
       }
     );
-    }
-    
   }
+  
 
   openHome() {
     this.router.navigate(['/login']);
@@ -58,6 +67,6 @@ export class SideBarComponent {
   logout() {
     this.loginService.logout();
     this.loginService.loginStatusSubject.next(false);
-    window.location.reload();
-  }
+    this.categories=null;
+this.router.navigate(['/login'])  }
 }
