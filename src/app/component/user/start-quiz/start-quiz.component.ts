@@ -26,6 +26,7 @@ export class StartQuizComponent implements OnInit {
   //   },
   //   // Add more questions as needed
   // ];
+
   quizStarted = false;
   quizEnded = false;
   questions: any = [];
@@ -36,6 +37,7 @@ export class StartQuizComponent implements OnInit {
   constructor(private locationSt: LocationStrategy, private questionService: QuestionService, private route: ActivatedRoute) {}
   
   ngOnInit(): void {
+
     this.preventBackButton();
     this.qId = this.route.snapshot.params['qId'];
     this.questionService.getQuestionsOfQuiz(this.qId).subscribe(
@@ -47,54 +49,28 @@ export class StartQuizComponent implements OnInit {
         console.log(error);
       }
     );
+
     this.quizStarted = true;
+    
     this.selectedOptions = new Array(this.questions.length).fill(null);
     this.startTimer();
   }
   
 
 
-  preventBackButton() {
-    history.pushState(null, '', location.href);
-    this.locationSt.onPopState(() => {
-      history.pushState(null, '', location.href);
-    });
-  }
-  
+ 
   currentQuestionIndex = 0;
   selectedOptions: string[] = [];
-  score = 0;
   timer: any;
   
-  startTimer() {
-    setInterval(() => {
-      if (this.timeLeft > 0) {
-        this.timeLeft--;
-      } else {
-        
-        this.endQuiz();
-      }
-    }, 1000);
-  }
-
-  formatTime(seconds: number): string {
-    const minutes: number = Math.floor(seconds / 60);
-    const secs: number = seconds % 60;
-    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-  }
-
-  getTimePercentage(): number {
-    return (this.timeLeft / this.totalTime) * 100;
-  }
+ 
   
   selectOption(option: string): void {
     this.selectedOptions[this.currentQuestionIndex] = option;
   }
   
   nextQuestion(): void {
-    if (this.selectedOptions[this.currentQuestionIndex] === this.questions[this.currentQuestionIndex].answer) {
-      this.score++;
-    }
+   
   
     if (this.currentQuestionIndex === this.questions.length - 1) {
       const answeredQuestions = this.selectedOptions.filter(option => option !== null).length;
@@ -118,7 +94,34 @@ export class StartQuizComponent implements OnInit {
     this.currentQuestionIndex--;
   }
   
+  startTimer() {
+    setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        
+        this.endQuiz();
+      }
+    }, 1000);
+  }
 
+  preventBackButton() {
+    history.pushState(null, '', location.href);
+    this.locationSt.onPopState(() => {
+      history.pushState(null, '', location.href);
+    });
+  }
+  
+
+  formatTime(seconds: number): string {
+    const minutes: number = Math.floor(seconds / 60);
+    const secs: number = seconds % 60;
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+  }
+
+  getTimePercentage(): number {
+    return (this.timeLeft / this.totalTime) * 100;
+  }
   
   canDeactivate(): Observable<boolean> | boolean {
     if (!this.quizEnded) {

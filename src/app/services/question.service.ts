@@ -21,4 +21,8 @@ export class QuestionService {
   deleteQuestion(quesId: any) {
     return this.http.delete(`${this.baseUrl}/question/${quesId}`);
   }
+
+  evaluateQuiz(questions:any) {
+    return this.http.post(`${this.baseUrl}/question/eval-quiz`, questions);
+  }
 }

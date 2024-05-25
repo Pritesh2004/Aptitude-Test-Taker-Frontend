@@ -39,14 +39,6 @@
     </mat-card-actions>
   </mat-card>
 </div>
-<mat-card *ngIf="quizEnded" class="result-card">
-  <mat-card-header>
-    <mat-card-title>Quiz Completed</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>Your score is {{ score }} out of {{ questions.length }}</p>
-  </mat-card-content>
-  <button mat-raised-button color="warn" routerLink="/userHome/all-quizzes">More quizzes</button>
-</mat-card>
+
 
 <app-quiz-summary *ngIf="quizEnded" [questions]="questions" [selectedOptions]="selectedOptions"></app-quiz-summary>

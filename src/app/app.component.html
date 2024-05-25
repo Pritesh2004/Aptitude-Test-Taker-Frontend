@@ -1,5 +1,8 @@
-<ngx-ui-loader></ngx-ui-loader>
+<ngx-ui-loader fgsColor="red" pbColor="red" fgsType="three-bounce"></ngx-ui-loader>
 
-<app-side-bar></app-side-bar>
 
-<router-outlet></router-outlet>
+<div ngxUiLoaderBlurred [blur]="8">
+    <app-side-bar></app-side-bar>
+
+    <router-outlet></router-outlet>
+</div>

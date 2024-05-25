@@ -4,6 +4,6 @@ Angular Material ->
                  -> npm install @angular/material @angular/cdk @angular/animations
                  -> npm install material-design-icons --save
 
-Page loader -> npm install --save ngx-ui-loader
+Page loader -> npm install --save ngx-ui-loader (website -> ngx ui loader)
 
 

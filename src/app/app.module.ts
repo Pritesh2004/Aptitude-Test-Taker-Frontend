@@ -74,7 +74,9 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
   ],
   imports: [
     NgxUiLoaderModule,
-    NgxUiLoaderHttpModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    }),
     MatSelectModule,
     MatSidenavModule,
     HttpClientModule,
