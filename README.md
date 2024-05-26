@@ -11,7 +11,7 @@ Welcome to **AptitudeAce**, an online platform designed to provide first-hand pr
 - **User Friendly**
 - **Responsive Interface**
 - **Client Side Validations**
-- **Secure Data Using Auth-Guard**
+- **Secured Routing Using Auth-Guard**
 
 ## Tech Stack
 
