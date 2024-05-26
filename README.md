@@ -1,27 +1,31 @@
-# AptitudeTestTaker
+# AptitudeAce - Mock Aptitude Test Platform Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+Welcome to **AptitudeAce**, an online platform designed to provide first-hand practice on various aptitude tests. This repository contains the frontend code for the project, built using Angular and other modern web technologies to deliver a robust, user-friendly, and responsive application.
 
-## Development server
+## Backend Repository - [https://github.com/Pritesh2004/AptitudeAce-Backend](https://github.com/Pritesh2004/AptitudeAce-Backend)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Single Page Website**
+- **User Friendly**
+- **Responsive Interface**
+- **Client Side Validations**
+- **Secure Data Using Auth-Guard**
 
-## Build
+## Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular**
+- **HTML**
+- **CSS**
+- **TypeScript**
+- **Angular Material**
 
-## Running unit tests
+## Contact
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If you have any questions or feedback, please feel free to reach out.
 
-## Running end-to-end tests
+- **Email:** [pmpatilpritesh123@gmail.com](mailto:pmpatilpritesh123@gmail.com)
+- **GitHub:** [Pritesh2004](https://github.com/Pritesh2004)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Thank you for visiting..
