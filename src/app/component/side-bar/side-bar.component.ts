@@ -9,12 +9,12 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent {
+
+  
   isLoggedIn = false;
   user = null;
   isRoleAdmin = false;
-
   categories:any=[];
-
 
 
   constructor(private loginService: LoginService, private router: Router, private categoryService: CategoryService) {}

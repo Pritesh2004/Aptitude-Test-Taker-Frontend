@@ -45,6 +45,7 @@ import { StartQuizComponent } from './component/user/start-quiz/start-quiz.compo
 import { CanDeactivateGuard } from './services/authGuards/can-deactivate-guard.service';
 import { QuizSummaryComponent } from './component/user/quiz-summary/quiz-summary.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
     }),
     MatSelectModule,
     MatSidenavModule,
+    MatMenuModule,
     HttpClientModule,
     MatIconModule,
     MatProgressSpinnerModule,

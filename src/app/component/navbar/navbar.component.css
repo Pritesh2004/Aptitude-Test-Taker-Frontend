@@ -1,18 +1,28 @@
 .navbar {
     height: 100px;
     background-color: #252729;
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#heading-div{
+    
+    display: flex;
     align-items: center;
 }
 
 #heading {
+    margin-left: 10px;
     text-decoration: none;
     color: white;
-    font-size: 25px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
+    font-size: 35px;
+    font-family:'Courier New', Courier, monospace;
+
+    font-weight: bold;
     letter-spacing: 0.5px;
 
 }
@@ -34,6 +44,24 @@
     letter-spacing: 0.5px;
     color: white;
     /* Sets text color to white */
+}
+
+.nav-icon{
+    transition: all 0.2s ease-in-out;
+
+}
+
+.nav-icon:hover{
+    scale: 1.2;
+    transition: all 0.2s ease-in-out;
+}
+  
+.mat-icon.mat-primary{
+    color: #2a9d8f;
+    height: max-content;
+    width: max-content;
+    overflow: auto;
+    font-size: var(--mdc-typography-button-font-size, 35px);
 }
 
 #joinBtn {
