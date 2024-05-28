@@ -7,14 +7,31 @@
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
+
+.nav-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
   
+.nav-links-title{
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
   .sidenav mat-toolbar {
-    background-color: #3f51b5;
+    background-color: #252729;
     color: #ffffff;
   }
+
+ 
   
   mat-toolbar {
-    background-color: #3f51b5;
+    background-color: #252729;
     color: #ffffff;
   }
   
@@ -36,12 +53,33 @@
   #nav-title{
     cursor: pointer;
   }
+
+  .sidebar-toolbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
   
+  #side-bar-heading{
+    margin-left: 16px;
+
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  #heading-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3f51b5;
+    background-color: #252729;
     color: white;
     padding: 0 1rem;
   }
@@ -67,26 +105,52 @@
   }
   
 
-  
+  #side-nav-logout{
+    position: absolute;
+    bottom: 20px;
+  }
   
 
 
-.contact-btn {
+
+
+
+
+.btn1{
   width: 135px;
   height: 45px;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
   margin-right: 10px;
-  
+  background-color: transparent;
+  border: #2a9d8f 1px solid;
+  color: white;
+  transition: all 0.2s ease-out;
+
 }
 
-#joinBtn {
-    width: 135px;
-    height: 45px;
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+.btn1:hover{
+  background-color: #2a9d8f;
+  transition: all 0.2s ease-out;
 }
 
+.btn2{
+  width: 135px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-right: 10px;
+  background-color: #2a9d8f;
+  border: #2a9d8f 1px solid;
+
+  color: white;
+  transition: all 0.2s ease-out;
+
+}
+
+.btn2:hover{
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+}

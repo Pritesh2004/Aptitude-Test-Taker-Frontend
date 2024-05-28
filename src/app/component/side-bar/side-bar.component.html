@@ -1,71 +1,82 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" mode="side">
-        <mat-toolbar>Quiz Navigation</mat-toolbar>
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" mode="over">
+        <mat-toolbar class="sidebar-toolbar">
+            <p id="side-bar-heading">AptitudeAce </p>  
+      </mat-toolbar>
         <mat-nav-list>
-           
-            <a *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/admin-profile">
-                <mat-icon>account_circle</mat-icon>
-                Profile
+            <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/admin-profile">
+                <div class="nav-links">
+                    <mat-icon >account_circle</mat-icon>
+                    <p class="nav-links-title">Profile</p>
+                </div>
+                
             </a>
-           
-            <a *ngIf="!isRoleAdmin" mat-list-item routerLink="/userHome/user-profile">
-                <mat-icon>account_circle</mat-icon>
-                Profile
+            <a  *ngIf="!isRoleAdmin" mat-list-item routerLink="/userHome/user-profile">
+                <div class="nav-links">
+                    <mat-icon >account_circle</mat-icon>
+                <p class="nav-links-title">Profile</p>
+                </div>
             </a>
-            <a *ngIf="!isRoleAdmin && user" mat-list-item routerLink="/userHome/all-quizzes">
-                <mat-icon>quiz</mat-icon>
-                All Quizzes
+            <a  *ngIf="!isRoleAdmin && user" mat-list-item routerLink="/userHome/all-quizzes">
+                <div class="nav-links">
+                    <mat-icon >quiz</mat-icon>
+                    <p class="nav-links-title">All Quizzes</p>
+                </div>
             </a>
-
             <div *ngIf="!isRoleAdmin">
-                <a *ngFor="let c of categories" mat-list-item [routerLink]="'/userHome/quiz/'+c.cid">
-                    <mat-icon>quiz</mat-icon>
-                    {{c.title}}
+                <a  *ngFor="let c of categories" mat-list-item [routerLink]="'/userHome/quiz/'+c.cid">
+                    <div class="nav-links">
+                        <mat-icon >category</mat-icon>
+                    <p class="nav-links-title">{{c.title}}</p>
+                    </div>
                 </a>
             </div>
-            
             <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/categories">
-                <mat-icon>quiz</mat-icon>
-                View Categories
+                <div class="nav-links">
+                    <mat-icon >view_list</mat-icon>
+                <p class="nav-links-title">View Categories</p>
+                </div>
             </a>
-
-            <a *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/addCategories">
-                <mat-icon>quiz</mat-icon>
-                Add Categories
+            <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/addCategories">
+                <div class="nav-links">
+                    <mat-icon >add_circle_outline</mat-icon>
+                <p class="nav-links-title">Add Categories</p>
+                </div>
             </a>
             <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/quizzes">
-                <mat-icon>quiz</mat-icon>
-                View Quizzes
+                <div class="nav-links">
+                    <mat-icon >list_alt</mat-icon>
+                <p class="nav-links-title">View Quizzes</p>
+                </div>
             </a>
             <a  *ngIf="isRoleAdmin" mat-list-item routerLink="/adminHome/createQuiz">
-                <mat-icon>quiz</mat-icon>
-                Add Quizzed
+                <div class="nav-links">
+                    <mat-icon >add_box</mat-icon>
+                <p class="nav-links-title">Add Quizzes</p>
+                </div>
             </a>
-            <a *ngIf="isLoggedIn" mat-list-item (click)="logout()">
-                <mat-icon>logout</mat-icon>
-                Logout
+            <a id="side-nav-logout" *ngIf="isLoggedIn" mat-list-item (click)="logout()">
+                <div class="nav-links">
+                    <mat-icon>logout</mat-icon>
+                <p class="nav-links-title">Logout</p>
+                </div>
             </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar>
-            
-            <button mat-icon-button (click)="drawer.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <span id="nav-title" routerLink="/">AptitudeAce </span>
-            <div class="navlinks">
-                <button  mat-stroked-button color="basic" *ngIf="!isRoleAdmin" class="contact-btn" routerLink="/contact">CONTACT</button>
-                <button mat-raised-button color="warn" *ngIf="!isLoggedIn"  (click)="openHome()">
-                    JOIN NOW
+        <mat-toolbar class="navbar">
+            <div id="heading-div">
+                <button mat-icon-button (click)="drawer.toggle()">
+                    <mat-icon>menu</mat-icon>
                 </button>
-                <button mat-raised-button color="warn" *ngIf="isLoggedIn" id="joinBtn" (click)="logout()">
-                    LOGOUT
-                </button>
+                <span id="nav-title" routerLink="/">AptitudeAce</span>
             </div>
-            
+            <div class="navlinks">
+                <button  class="btn1" *ngIf="!isRoleAdmin"  routerLink="/contact">CONTACT</button>
+                <button   class="btn2"  *ngIf="!isLoggedIn" (click)="openHome()">JOIN NOW</button>
+                <button  class="btn2"  *ngIf="isLoggedIn" (click)="logout()">LOGOUT</button>
+            </div>
         </mat-toolbar>
-
         <div class="main-content">
             <router-outlet></router-outlet>
         </div>
