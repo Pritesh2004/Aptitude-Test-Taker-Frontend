@@ -1,5 +1,5 @@
 <div class="quiz-container" *ngIf="!quizEnded">
-  <h1>Time Left: {{ formatTime(timeLeft) }}</h1>
+  <h1 id="time-left">Time Left: {{ formatTime(timeLeft) }}</h1>
   <div class="progress-container">
     <mat-progress-spinner 
       [value]="getTimePercentage()" 

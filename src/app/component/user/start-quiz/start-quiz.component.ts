@@ -31,8 +31,8 @@ export class StartQuizComponent implements OnInit {
   quizEnded = false;
   questions: any = [];
   qId: any;
-  timeLeft: number = 20; // Example total time in seconds
-  totalTime: number = 20; // Total quiz time in seconds
+  timeLeft: number = 600; // Example total time in seconds
+  totalTime: number = 600; // Total quiz time in seconds
   
   constructor(private locationSt: LocationStrategy, private questionService: QuestionService, private route: ActivatedRoute) {}
   

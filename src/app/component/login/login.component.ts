@@ -36,12 +36,12 @@ export class LoginComponent{
             this.loginService.setUser(userData);
 
             if(this.loginService.getUserRole() == "ADMIN"){
-              this.router.navigate(['adminHome/admin-profile']);
+              this.router.navigate(['/']);
               this.loginService.loginStatusSubject.next(true);
 
             }
             else if(this.loginService.getUserRole() == "NORMAL"){
-              this.router.navigate(['userHome/all-quizzes']);
+              this.router.navigate(['/']);
               this.loginService.loginStatusSubject.next(true);
 
             }

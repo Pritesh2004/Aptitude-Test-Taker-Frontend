@@ -1,6 +1,6 @@
 /* user-registration.component.css */
 .signup-page{
-    background-color: #ecf4f3;
+    background-color: aliceblue;
     height:90.8vh;
 
     display: flex;
@@ -30,7 +30,7 @@
       letter-spacing: 1.5px;
     }
     
-    form {
+    .signup-form {
       display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -105,3 +105,27 @@
       margin-left: 10px;
     }
     
+    .otp-div{
+      background-color: white;
+      height: 30vh;
+      width: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #otp-heading{
+      font-size: 25px;
+      font-weight: bold;
+      margin-top: 25px;
+    }
+
+    #otp-input{
+      margin-top: 20px;
+      width: 70%;
+    }
+
+    #otp-btn{
+      margin-top: 15px;
+      width: 60%;
+    }

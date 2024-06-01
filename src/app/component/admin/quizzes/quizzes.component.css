@@ -1,58 +1,65 @@
 .quiz-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .quiz-card {
-    flex: 0 1 calc(50% - 20px);
-    margin-bottom: 20px;
-  }
-  
-  mat-card {
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  mat-card-header {
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  mat-card-title {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  mat-card-subtitle {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  mat-card-content {
-    padding: 20px;
-  }
-  
-  mat-card-actions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px;
-  }
-  
-  button[mat-button] {
-    margin-left: 10px;
-    padding: 8px 16px;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #007bff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[mat-button]:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
+  height: 90.6vh;
+  background-color: aliceblue;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 3%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.quiz-card {
+
+  margin: 1%;
+}
+
+mat-card {
+  max-width: 600px;
+  width: 100%;
+}
+
+mat-card-header {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+mat-card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  font-size: 16px;
+  color: #666;
+}
+
+mat-card-content {
+  padding: 20px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+button[mat-button] {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[mat-button]:hover {
+  background-color: #007bff;
+  color: #fff;
+}

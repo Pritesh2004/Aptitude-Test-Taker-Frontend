@@ -3,7 +3,7 @@
 
     <div *ngIf="!otpSent" class="signup-container">
       <p id="signup">SIGNUP</p>
-      <form #signupForm="ngForm" (submit)="sendOTP(user.email)">
+      <form class="signup-form" #signupForm="ngForm" (submit)="sendOTP(user.email)">
         <div class="input-div">
           <div class="input-divs">
             <input type="text" id="username" [(ngModel)]="user.username" #username="ngModel" name="username" required minlength="4" maxlength="20" pattern="[a-zA-Z0-9]+"
@@ -58,10 +58,11 @@
     </div>
   
     <div  *ngIf="otpSent">
-      <form #otpForm="ngForm" (submit)="verifyOtp(formOtp.fOtp)">
-        <label for="otp">Enter OTP:</label>
-        <input type="text" id="otp" [(ngModel)]="formOtp.fOtp" #fOtp="ngModel" name="fOtp" required>
-        <button type="submit">Verify OTP</button>
+      <form class="otp-div" #otpForm="ngForm" (submit)="verifyOtp(formOtp.fOtp)">
+        <p  id="otp-heading">OTP Authentication</p>
+        <input id="otp-input" type="text"  [(ngModel)]="formOtp.fOtp" #fOtp="ngModel" name="fOtp" required placeholder="Enter OTP">
+        <button id="otp-btn" type="submit">Verify OTP</button>
+
       </form>
     </div>
   
