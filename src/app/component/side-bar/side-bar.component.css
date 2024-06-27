@@ -76,12 +76,17 @@
     align-items: center;
   }
   .navbar {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #252729;
     color: white;
     padding: 0 1rem;
+    z-index: 10;
+    margin-bottom: 10vh;
+
   }
   
   .navbar a {

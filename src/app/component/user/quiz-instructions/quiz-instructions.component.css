@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90.6vh;
+    height: 100vh;
     background-color:aliceblue;
   }
   
@@ -66,7 +66,8 @@
     margin-top: 20px;
   }
   
-  button {
+  button[mat-raised-button] {
+    background-color: #2a9d8f;
     padding: 10px 20px;
     font-size: 16px;
   }

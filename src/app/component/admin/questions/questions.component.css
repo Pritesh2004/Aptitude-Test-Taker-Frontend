@@ -1,3 +1,7 @@
+.content{
+  height: 90vh;
+  margin-top: 10vh;
+}
 .question-card {
     margin-bottom: 20px;
   }

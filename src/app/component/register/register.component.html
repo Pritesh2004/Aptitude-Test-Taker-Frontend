@@ -57,13 +57,14 @@
       </form>
     </div>
   
-    <div  *ngIf="otpSent">
+    <div *ngIf="otpSent">
+      <mat-card class="otp-card">
       <form class="otp-div" #otpForm="ngForm" (submit)="verifyOtp(formOtp.fOtp)">
-        <p  id="otp-heading">OTP Authentication</p>
-        <input id="otp-input" type="text"  [(ngModel)]="formOtp.fOtp" #fOtp="ngModel" name="fOtp" required placeholder="Enter OTP">
+        <p id="otp-heading">OTP Authentication</p>
+        <input id="otp-input" type="text" [(ngModel)]="formOtp.fOtp" #fOtp="ngModel" name="fOtp" required placeholder="Enter OTP">
         <button id="otp-btn" type="submit">Verify OTP</button>
-
       </form>
+    </mat-card>
     </div>
   
   </div>

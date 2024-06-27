@@ -1,8 +1,8 @@
 /* user-registration.component.css */
 .signup-page{
     background-color: aliceblue;
-    height:90.8vh;
-
+    min-height:100vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -15,7 +15,8 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  display: flex;
     flex-direction: column;
     align-items: center;
-    height: 73%;
+    margin-top: 50px;
+    height: 64vh;
     width: 450px;
     border: 1px solid white;
     border-radius: 5px;
@@ -104,28 +105,53 @@
       color: orangered;
       margin-left: 10px;
     }
-    
-    .otp-div{
-      background-color: white;
-      height: 30vh;
-      width: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
 
-    #otp-heading{
-      font-size: 25px;
-      font-weight: bold;
-      margin-top: 25px;
-    }
+/* Style for the OTP card */
+.otp-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  max-width: 400px;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-top: 5px solid #2a9d8f; /* Theme color for the top border */
+}
 
-    #otp-input{
-      margin-top: 20px;
-      width: 70%;
-    }
+#otp-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom:30px;
+  color: #2a9d8f; /* Theme color for the heading */
+  text-align: center;
+}
 
-    #otp-btn{
-      margin-top: 15px;
-      width: 60%;
-    }
+
+#otp-input {
+  background-color: #ffffff; /* White background */
+  height: 30px; /* Reduce height */
+  padding: 5px 10px;
+  min-width:93.5%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#otp-btn {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  background-color: #2a9d8f; /* Theme color for the button */
+  color: white;
+  border: none;
+  margin-top: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#otp-btn:hover {
+  background-color: #217b6b; /* Darker shade of theme color on hover */
+}
